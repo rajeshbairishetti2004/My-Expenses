@@ -1,0 +1,274 @@
+:root {
+  --bg-light: linear-gradient(to right, #74ebd5, #9face6);
+  --bg-dark: linear-gradient(to right, #232526, #414345);
+  --text-light: #333;
+  --text-dark: #eee;
+  --primary: #007bff;
+  --button-hover: #0056b3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 18px;
+  color: #666;
+}
+
+/* Landing Page Styles */
+.landing-page {
+  background: var(--bg-light);
+  color: var(--text-light);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+.landing-page.dark-mode {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.entry-container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 50px 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  transition: background 0.5s ease;
+}
+
+.dark-mode .entry-container {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.logo i {
+  font-size: 70px;
+  color: var(--primary);
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+.entry-container h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.subtext {
+  font-size: 16px;
+  color: #888;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--primary);
+  color: white;
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-size: 18px;
+  transition: transform 0.3s, background-color 0.3s;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+  border: none;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.btn:hover {
+  background-color: var(--button-hover);
+  transform: scale(1.05);
+}
+
+.btn.secondary {
+  background-color: #6c757d;
+}
+
+.btn.secondary:hover {
+  background-color: #545b62;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--primary);
+  transition: color 0.3s ease;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fade 1.5s ease forwards;
+}
+
+.fade-in.delay-1 { animation-delay: 0.5s; }
+.fade-in.delay-2 { animation-delay: 1s; }
+.fade-in.delay-3 { animation-delay: 1.5s; }
+.fade-in.delay-4 { animation-delay: 2s; }
+
+@keyframes fade {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Auth Forms */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-light);
+  padding: 20px;
+}
+
+.auth-form {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-form h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #555;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+}
+
+.auth-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.auth-btn:hover {
+  background-color: var(--button-hover);
+}
+
+.auth-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.auth-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.auth-link a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.auth-link a:hover {
+  text-decoration: underline;
+}
+
+.error {
+  color: #dc3545;
+  background-color: #f8d7da;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.success {
+  color: #155724;
+  background-color: #d4edda;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .entry-container {
+    padding: 30px 20px;
+  }
+
+  .logo i {
+    font-size: 50px;
+  }
+
+  .entry-container h1 {
+    font-size: 30px;
+  }
+
+  .btn {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .auth-form {
+    padding: 30px 20px;
+  }
+}
